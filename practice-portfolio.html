@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Saima Begum's personal portfolio showcasing web development skills, education, and experience.">
+    <title>Saima Begum | Web Developer</title>
+
+    <style>
+        /* ---------- General styles ---------- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #263238;
+            background-color: #f7f9fc;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1100px, 90%);
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 70px 0;
+        }
+
+        .section-title {
+            margin-bottom: 25px;
+            color: #17324d;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        /* ---------- Header and navigation ---------- */
+        header {
+            background-color: #17324d;
+            color: white;
+            padding: 18px 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 1.35rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            list-style: none;
+        }
+
+        nav a:hover {
+            color: #9ed8e5;
+        }
+
+        /* ---------- Hero / About section ---------- */
+        .hero {
+            padding: 95px 0;
+            background: linear-gradient(135deg, #e8f1f8, #f7f9fc);
+            text-align: center;
+        }
+
+        .hero h1 {
+            margin-bottom: 10px;
+            color: #17324d;
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+        }
+
+        .hero h2 {
+            margin-bottom: 18px;
+            color: #28758a;
+            font-size: 1.35rem;
+            font-weight: 500;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: 0 auto 25px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 11px 22px;
+            border-radius: 6px;
+            background-color: #28758a;
+            color: white;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background-color: #1d5969;
+        }
+
+        /* ---------- Cards and content ---------- */
+        .card {
+            padding: 24px;
+            border: 1px solid #e1e7ed;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0 3px 12px rgba(23, 50, 77, 0.06);
+        }
+
+        .card h3 {
+            margin-bottom: 8px;
+            color: #17324d;
+        }
+
+        .card p + p {
+            margin-top: 8px;
+        }
+
+        .muted {
+            color: #60717e;
+            font-size: 0.95rem;
+        }
+
+        /* ---------- Education ---------- */
+        .education-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        /* ---------- Skills ---------- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+        }
+
+        .skills-grid ul {
+            padding-left: 20px;
+        }
+
+        /* ---------- Experience ---------- */
+        .experience-list {
+            display: grid;
+            gap: 20px;
+        }
+
+        .experience-heading {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .experience-list ul {
+            padding-left: 20px;
+        }
+
+        /* ---------- Projects ---------- */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            border-top: 4px solid #28758a;
+        }
+
+        /* ---------- Activities ---------- */
+        .activities-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        /* ---------- Contact ---------- */
+        #contact {
+            background-color: #e8f1f8;
+            text-align: center;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 18px;
+            margin-top: 18px;
+        }
+
+        .contact-links a {
+            color: #17677d;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        /* ---------- Footer ---------- */
+        footer {
+            padding: 20px;
+            background-color: #17324d;
+            color: white;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* ---------- Mobile layout ---------- */
+        @media (max-width: 650px) {
+            .nav-container {
+                flex-direction: column;
+            }
+
+            nav ul {
+                justify-content: center;
+                gap: 12px;
+            }
+
+            .section {
+                padding: 50px 0;
+            }
+
+            .experience-heading {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header: site name and navigation links -->
+    <header>
+        <div class="container nav-container">
+            <a class="logo" href="#home">Saima Begum</a>
+
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- About section -->
+        <section class="hero" id="home">
+            <div class="container" id="about">
+                <h1>Hi, I'm Saima Begum</h1>
+                <h2>Aspiring Web Developer</h2>
+                <p>
+                    I'm a web development student interested in building useful,
+                    accessible, and user-friendly websites. I enjoy learning how
+                    websites work and turning ideas into functional digital experiences.
+                </p>
+                <a class="button" href="#contact">Get in Touch</a>
+            </div>
+        </section>
+
+        <!-- Education section -->
+        <section class="section" id="education">
+            <div class="container">
+                <h2 class="section-title">Education</h2>
+
+                <div class="education-list">
+                    <article class="card">
+                        <h3>University of Maryland Global Campus</h3>
+                        <p class="muted">Adelphi, Maryland</p>
+                        <p><strong>Bachelor's Degree:</strong> Web &amp; Digital Design</p>
+                        <p class="muted">In progress</p>
+                    </article>
+
+                    <article class="card">
+                        <h3>Montgomery College</h3>
+                        <p class="muted">Rockville, Maryland | Graduated August 2026</p>
+                        <p><strong>Associate of Arts:</strong> Digital Media &amp; Web Technology</p>
+                        <p><strong>GPA:</strong> 3.70</p>
+                        <p>Phi Theta Kappa, 2026 | Dean's List, 2026</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills section -->
+        <section class="section" id="skills">
+            <div class="container">
+                <h2 class="section-title">My Skills</h2>
+
+                <div class="skills-grid">
+                    <article class="card">
+                        <h3>Programming</h3>
+                        <ul>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                            <li>PHP</li>
+                        </ul>
+                    </article>
+
+                    <article class="card">
+                        <h3>Web &amp; Design Tools</h3>
+                        <ul>
+                            <li>Adobe Creative Suite</li>
+                            <li>Dreamweaver</li>
+                            <li>FileZilla</li>
+                            <li>DaVinci Resolve</li>
+                        </ul>
+                    </article>
+
+                    <article class="card">
+                        <h3>Office Tools</h3>
+                        <ul>
+                            <li>Microsoft 365</li>
+                            <li>Google Workspace</li>
+                        </ul>
+                    </article>
+
+                    <article class="card">
+                        <h3>Professional Skills</h3>
+                        <ul>
+                            <li>Research</li>
+                            <li>Document management</li>
+                            <li>Organization</li>
+                            <li>Attention to detail</li>
+                        </ul>
+                    </article>
+
+                    <article class="card">
+                        <h3>Languages</h3>
+                        <ul>
+                            <li>English — Fluent</li>
+                            <li>Bengali — Conversational</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience section -->
+        <section class="section" id="experience">
+            <div class="container">
+                <h2 class="section-title">Experience</h2>
+
+                <div class="experience-list">
+                    <article class="card">
+                        <div class="experience-heading">
+                            <div>
+                                <h3>Information Technology Intern</h3>
+                                <p><strong>State's Attorney's Office</strong> | Rockville, MD</p>
+                            </div>
+                            <p class="muted">June 2026 – August 2026</p>
+                        </div>
+
+                        <ul>
+                            <li>Created and updated web pages using the organization's content management system.</li>
+                            <li>Edited website content, fixed broken links, and maintained accurate web resources.</li>
+                            <li>Created transcripts for audio and video content.</li>
+                            <li>Edited videos in DaVinci Resolve, including captions, descriptive audio, and on-screen text.</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects section: replace these placeholders with real project details -->
+        <section class="section" id="projects">
+            <div class="container">
+                <h2 class="section-title">My Projects</h2>
+
+                <div class="projects-grid">
+                    <article class="card project-card">
+                        <h3>Project One</h3>
+                        <p>Add a short description of a website or coding project you created.</p>
+                        <p class="muted">Technologies: HTML, CSS</p>
+                    </article>
+
+                    <article class="card project-card">
+                        <h3>Project Two</h3>
+                        <p>Add a short description of another project and what you learned.</p>
+                        <p class="muted">Technologies: JavaScript</p>
+                    </article>
+
+                    <article class="card project-card">
+                        <h3>Project Three</h3>
+                        <p>Add a description of a project you are currently working on.</p>
+                        <p class="muted">Technologies: Add your tools here</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Extracurricular activities section -->
+        <section class="section" id="activities">
+            <div class="container">
+                <h2 class="section-title">Activities &amp; Involvement</h2>
+
+                <div class="activities-list">
+                    <article class="card">
+                        <h3>Phi Theta Kappa</h3>
+                        <p class="muted">Montgomery College | February 2026 – Present</p>
+                        <ul>
+                            <li>Helped distribute food packages through a mobile food market.</li>
+                            <li>Assisted with organizing a college transfer fair.</li>
+                        </ul>
+                    </article>
+
+                    <article class="card">
+                        <h3>Future Link</h3>
+                        <p class="muted">September 2024 – Present</p>
+                        <ul>
+                            <li>Completed a leadership seminar.</li>
+                            <li>Work with a mentor on academic and career goals.</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact section -->
+        <section class="section" id="contact">
+            <div class="container">
+                <h2 class="section-title">Contact Me</h2>
+                <p>Thanks for visiting my portfolio! Feel free to reach out.</p>
+
+                <div class="contact-links">
+                    <a href="mailto:saima.bg1006@gmail.com">Email</a>
+                    <a href="https://www.linkedin.com/in/saima-begum-profile"
+                       target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <!-- Add your GitHub profile link here when ready. -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Saima Begum. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
